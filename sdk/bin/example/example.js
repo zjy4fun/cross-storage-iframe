@@ -193,8 +193,8 @@ var example;
         CrossStorageSDK._sendRequest = function (request) {
             window.frames[0].postMessage(JSON.stringify(request), this._storageOrigin);
         };
-        CrossStorageSDK._storageSrc = "https://www.example.com/cross-storage-iframe.html";
-        CrossStorageSDK._storageOrigin = "https://www.example.com";
+        CrossStorageSDK._storageSrc = "https://cross-storage-iframe.vercel.app/cross-storage-iframe.html";
+        CrossStorageSDK._storageOrigin = "https://cross-storage-iframe.vercel.app";
         CrossStorageSDK._ready = false;
         CrossStorageSDK._callbacks = {};
         return CrossStorageSDK;

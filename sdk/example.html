@@ -30,6 +30,7 @@
                 example.sdk.init().then(() => {
                     d.querySelector('#example-set').addEventListener('click', async () => {
                         var value = JSON.stringify({ 'key': 'hello, cross storage' });
+                        console.log('value = ', value);
                         example.sdk.set('exampleKey', value).then(() => {
                             w.alert('set success:' + value);
                         });

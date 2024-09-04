@@ -46,9 +46,8 @@ module example {
     }
 
     class CrossStorageSDK {
-
-        private static readonly _storageSrc: string = "https://www.example.com/cross-storage-iframe.html";
-        private static readonly _storageOrigin: string = "https://www.example.com";
+        private static readonly _storageSrc: string = "https://cross-storage-iframe.vercel.app/cross-storage-iframe.html";
+        private static readonly _storageOrigin: string = "https://cross-storage-iframe.vercel.app";
         private static _ready: boolean = false;
         private static _callbacks: { [key: string]: (response?: ResponseInfo) => Promise<string> | void } = {};
 
