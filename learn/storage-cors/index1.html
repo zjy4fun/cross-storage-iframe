@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1</title>
+  </head>
+  <body>
+    <script>
+      function write1() {
+        localStorage.setItem("k1", "v1" + Math.random());
+      }
+
+      function read1() {
+        document.getElementById("content").innerText =
+          localStorage.getItem("k1");
+      }
+    </script>
+    <button id="write" onclick="write1()">写</button>
+    <button id="read" onclick="read1()">读</button>
+    <textarea id="content" cols="30" rows="10"></textarea>
+  </body>
+</html>

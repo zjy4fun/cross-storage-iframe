@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2</title>
+  </head>
+  <body>
+    <script>
+      function write2() {
+        localStorage.setItem("k2", "v2" + Math.random());
+      }
+
+      function read1() {
+        document.getElementById("content").innerText =
+          localStorage.getItem("k1");
+      }
+
+      function read2() {
+        document.getElementById("content").innerText =
+          localStorage.getItem("k2");
+      }
+    </script>
+    <button id="write" onclick="write2()">写</button>
+    <button id="read" onclick="read1()">读 1</button>
+    <button id="read2" onclick="read2()">读 2</button>
+    <textarea id="content" cols="30" rows="10"></textarea>
+  </body>
+</html>
