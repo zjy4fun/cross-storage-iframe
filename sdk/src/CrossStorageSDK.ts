@@ -48,7 +48,7 @@ module example {
     class CrossStorageSDK {
 
         private static readonly _storageSrc: string = "https://www.example.com/cross-storage-iframe.html";
-        private static readonly _storageOrign: string = "https://www.example.com";
+        private static readonly _storageOrigin: string = "https://www.example.com";
         private static _ready: boolean = false;
         private static _callbacks: { [key: string]: (response?: ResponseInfo) => Promise<string> | void } = {};
 
@@ -95,7 +95,7 @@ module example {
             let response: ResponseInfo;
 
             // 忽略其他源发送的消息
-            if (message.origin !== CrossStorageSDK._storageOrign) return;
+            if (message.origin !== CrossStorageSDK._storageOrigin) return;
 
             if (message.data === 'unavailable') {
                 CrossStorageSDK._callbacks['unavailable']();
@@ -213,7 +213,7 @@ module example {
         }
 
         private static _sendRequest(request: RequestInfo): void {
-            window.frames[0].postMessage(JSON.stringify(request), this._storageOrign);
+            window.frames[0].postMessage(JSON.stringify(request), this._storageOrigin);
         }
     }
 

@@ -1,8 +1,9 @@
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -12,7 +13,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -81,7 +82,7 @@ var example;
         CrossStorageSDK._listener = function (message) {
             var response;
             // 忽略其他源发送的消息
-            if (message.origin !== CrossStorageSDK._storageOrign)
+            if (message.origin !== CrossStorageSDK._storageOrigin)
                 return;
             if (message.data === 'unavailable') {
                 CrossStorageSDK._callbacks['unavailable']();
@@ -190,10 +191,10 @@ var example;
             });
         };
         CrossStorageSDK._sendRequest = function (request) {
-            window.frames[0].postMessage(JSON.stringify(request), this._storageOrign);
+            window.frames[0].postMessage(JSON.stringify(request), this._storageOrigin);
         };
         CrossStorageSDK._storageSrc = "https://www.example.com/cross-storage-iframe.html";
-        CrossStorageSDK._storageOrign = "https://www.example.com";
+        CrossStorageSDK._storageOrigin = "https://www.example.com";
         CrossStorageSDK._ready = false;
         CrossStorageSDK._callbacks = {};
         return CrossStorageSDK;

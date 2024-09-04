@@ -1,7 +1,7 @@
-declare module example {
+declare namespace example {
     class CrossStorageSDK {
         private static readonly _storageSrc;
-        private static readonly _storageOrign;
+        private static readonly _storageOrigin;
         private static _ready;
         private static _callbacks;
         static init(): Promise<void>;
@@ -26,5 +26,6 @@ declare module example {
         static clear(): Promise<string>;
         private static _sendRequest;
     }
-    let sdk: typeof CrossStorageSDK;
+    export let sdk: typeof CrossStorageSDK;
+    export {};
 }
