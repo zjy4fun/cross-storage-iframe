@@ -180,7 +180,7 @@ module crossStorage {
         }
 
         /**
-         * 删除在parms.keys中找到的数组中指定的所有键
+         * 删除在params.keys中找到的数组中指定的所有键
          * @param params 
          */
         private static _del(params: ParamsInfo): void {
